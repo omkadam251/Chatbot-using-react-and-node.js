@@ -4,15 +4,23 @@
   "description": "React bot for webpage",
   "main": "index.js",
   "engines": {
-  	"node":"10.15.3" ,
-  	"npm":"6.4.1"
+    "node": "10.15.3",
+    "npm": "6.4.1"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "backend": "nodemon index.js"
   },
   "author": "Omkar Kadam",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "dialogflow": "^0.8.2",
     "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
   }
 }
+
+
