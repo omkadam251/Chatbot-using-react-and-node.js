@@ -103,9 +103,30 @@ class Chatbot extends Component {
         }
         catch(error)
         {
-        	console.log(error);
+					let says = {
+                speaks: 'bot',
+								msg: {
+								                    text : {
+								                        text: "I'm having troubles. I need to terminate. will be back later"
+								                    }
+								                }
         }
      }
+		// this.setState({ messages: [...this.state.messages, says]});
+
+		 let that = this;
+	             setTimeout(function(){
+	                 that.setState({ showBot: false})
+	             }, 2000);
+	         }
+					 resolveAfterXSeconds(x) {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve(x);
+            }, x * 1000);
+        })
+    }
+
 
     componentDidMount() {
         this.df_event_query('Welcome');
