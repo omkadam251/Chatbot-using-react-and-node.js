@@ -18,6 +18,7 @@ const sessionPath = sessionClient.sessionPath(config.googleProjectID, config.dia
 
 module.exports = {
 	textQuery: async function(text, parameters = {}) {
+	//	let sessionPath = sessionClient.sessionPath(projectID, sessionID + userID);
 		let self = module.exports;
 				const request = {
             session: sessionPath,
@@ -39,6 +40,7 @@ module.exports = {
 	},
 
 	eventQuery: async function(event, parameters = {}) {
+	//	let sessionPath = sessionClient.sessionPath(projectID, sessionID + userID);
 		let self = module.exports;
 				const request = {
             session: sessionPath,

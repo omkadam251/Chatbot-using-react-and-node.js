@@ -9,14 +9,21 @@
   },
   "scripts": {
     "start": "node index.js",
-    "backend": "nodemon index.js"
+    "backend": "nodemon index.js",
+    "frontend": "npm run start --prefix client",
+    "dev": "concurrently \"npm run backend\"  \"npm run start --prefix client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+
+
   },
   "author": "Omkar Kadam",
   "license": "ISC",
   "dependencies": {
+    "actions-on-google": "^2.7.0",
     "babel-runtime": "^6.26.0",
     "body-parser": "^1.18.3",
     "dialogflow": "^0.8.2",
+    "dialogflow-fulfillment": "^0.6.1",
     "express": "^4.16.4"
   },
   "devDependencies": {
