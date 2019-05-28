@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Message = (props) => (
-    
+
 
         <div className="col s12 m8 offset-m2 l6 offset-l3">
             <div className="card-panel grey lighten-5 z-depth-1">
@@ -25,6 +25,6 @@ const Message = (props) => (
             </div>
         </div>
 
-    
+
 );
 export default Message;

@@ -13,8 +13,6 @@
     "frontend": "npm run start --prefix client",
     "dev": "concurrently \"npm run backend\"  \"npm run start --prefix client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
-
-
   },
   "author": "Omkar Kadam",
   "license": "ISC",
@@ -24,7 +22,8 @@
     "body-parser": "^1.18.3",
     "dialogflow": "^0.8.2",
     "dialogflow-fulfillment": "^0.6.1",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "google-oauth-jwt": "^0.2.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"

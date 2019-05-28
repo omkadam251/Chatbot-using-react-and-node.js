@@ -3,6 +3,8 @@
 const dialogflow = require('dialogflow');
 const structjson = require('./structjson');
 const config = require('../config/keys');
+const googleAuth = require('google-oauth-jwt');
+
 
 const projectID = config.googleProjectID;
 const credentials = {
@@ -17,8 +19,23 @@ const sessionPath = sessionClient.sessionPath(config.googleProjectID, config.dia
 
 
 module.exports = {
+
+    getToken: async function() {
+        return new Promise((resolve) => {
+            googleAuth.authenticate(
+                {
+                    email: config.googleClientEmail,
+                    key: config.googlePrivateKey,
+                    scopes: ['https://www.googleapis.com/auth/cloud-platform'],
+                },
+                (err, token) => {
+                    resolve(token);
+                },
+            );
+        });
+    },
 	textQuery: async function(text, parameters = {}) {
-	//	let sessionPath = sessionClient.sessionPath(projectID, sessionID + userID);
+		let sessionPath = sessionClient.sessionPath(projectID, sessionID + userID);
 		let self = module.exports;
 				const request = {
             session: sessionPath,
@@ -40,7 +57,7 @@ module.exports = {
 	},
 
 	eventQuery: async function(event, parameters = {}) {
-	//	let sessionPath = sessionClient.sessionPath(projectID, sessionID + userID);
+		let sessionPath = sessionClient.sessionPath(projectID, sessionID + userID);
 		let self = module.exports;
 				const request = {
             session: sessionPath,
