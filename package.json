@@ -19,10 +19,10 @@
   "dependencies": {
     "actions-on-google": "^2.7.0",
     "babel-runtime": "^6.26.0",
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.20.1",
     "dialogflow": "^0.8.2",
     "dialogflow-fulfillment": "^0.6.1",
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "google-oauth-jwt": "^0.2.0"
   },
   "devDependencies": {
